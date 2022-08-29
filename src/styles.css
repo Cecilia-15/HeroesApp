@@ -1,0 +1,75 @@
+/* body */
+body {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0) 35%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.6) 100%) center / cover no-repeat fixed, url(/src/image/fondo.jpg);;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* background-image: url(/src/image/fondoo.jpg); */
+    background-position: fixed;
+     background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* Login */
+.containerLogin {
+    display: grid;
+    justify-content: center;
+    padding-top: 15%;
+    
+}
+
+/* NarBar */
+.user {
+    color:#DE1F39;
+    padding-top: 9px;
+    padding-right: 4px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+
+/* Pagination */
+.containerPagination {
+    /* color:black; */
+    display: flex;
+    align-items: self-end;
+    justify-content: center;
+    margin: 5%;
+}
+
+.containerPagination p {
+    color: white
+}
+
+.button {
+    background-color: #DE1F39;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.button1:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,1), o 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* HeroProvider */
+/* .containerHero {
+    /* background-color: black; */
+/* } */
+
+/* Hero list */
+.list {
+    margin-bottom: 3%;
+}
+
+/* card */
+.card{
+    display: flex;
+    color: black;
+}
