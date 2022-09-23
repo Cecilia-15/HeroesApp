@@ -5,7 +5,7 @@ import { Pagination } from './Pagination'
 import { useCounter } from '../../hooks/useCounter'
 
 
-export const HeroList = ({publisher}) => {
+export const HeroList = () => {
   const {data, isLoading} = useContext(HeroContext)
 
   const { counter, decrement, increment, reset } = useCounter(1)

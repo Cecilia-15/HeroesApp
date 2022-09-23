@@ -14,8 +14,8 @@ export const HeroRoutes = () => {
                 <HeroProvider>
                     <Routes>
                         <Route
-                            path="/publisher">
-                            element={<HeroByPublisherPage/>}
+                            path="/publisher"
+                            element={<HeroByPublisherPage/>}>
                         </Route>
 
                         <Route path="/search" element={<SearchPage/>}></Route>

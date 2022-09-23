@@ -15,7 +15,7 @@ export const HeroesRoutes = () => {
         <div className="container">
         <Routes>
 
-            <Route path='/publisher' element={<HeroByPublisherPage a={'marvel'} />} />
+            <Route path='/publisher' element={<HeroByPublisherPage />} />
 
             <Route path='search' element={<SearchPage />} />
             <Route path='hero/:heroId' element={<HeroPage />} />           

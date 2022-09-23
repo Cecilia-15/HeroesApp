@@ -1,4 +1,7 @@
 import React, { useReducer } from 'react'
+import { useDispatch } from 'react-redux'
+import { logoutFirebase } from '../../firebase/provider'
+import { startLogout } from '../../store/auth/thunks'
 import { types } from '../types/types'
 import { AuthContext } from './AuthContext'
 import { authReducer } from './authReducer'
@@ -20,6 +23,7 @@ const init = () => {
 export const AuthProvider = ({children}) => {
 
     const [authState, dispatch] = useReducer(authReducer, initialState, init);
+    const ReduxDispatch = useDispatch()
 
     const login = (username = '') => {
 
@@ -38,7 +42,7 @@ export const AuthProvider = ({children}) => {
 
     const logout = () => {
         dispatch({type: types.logout})
-        
+        ReduxDispatch(startLogout())
         localStorage.removeItem('user');
     }
 

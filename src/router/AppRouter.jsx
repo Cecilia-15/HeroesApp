@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { LoginPage } from '../auth/pages/LoginPage'
 import { HeroesRoutes } from '../heroes/routes/HeroesRoutes'
+import { Register } from '../auth/pages/Register'
 
 import { PrivateRute } from './PrivateRute'
 import { PublicRoute } from './PublicRoute'
@@ -17,6 +18,15 @@ export const AppRouter = () => {
                   <LoginPage />
                 </PublicRoute>
               } />
+
+            <Route 
+              path='register' 
+              element={
+                <PublicRoute> 
+                  <Register />
+                </PublicRoute>
+              } />
+            
 
             <Route 
               path='/*' 

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
-import { AuthContext } from '../auth/context/AuthContext'
+import { useIsAuthenticated } from '../hooks/useIsAuthenticated'
 
 export const PublicRoute = ({children}) => {
 
-    const { logged } = useContext(AuthContext)
+    const { isLogged } = useIsAuthenticated()
 
-  return (!logged)
+  return (!isLogged)
     ? children
     : <Navigate to='/publisher' />
 }

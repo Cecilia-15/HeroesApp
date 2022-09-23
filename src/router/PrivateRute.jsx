@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
+import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
-import { AuthContext } from '../auth/context/AuthContext'
+import { useIsAuthenticated } from '../hooks/useIsAuthenticated'
 
 export const PrivateRute = ({children}) => {
-  
-    const { logged } = useContext(AuthContext)
 
-    return (logged)
+    const { isLogged } = useIsAuthenticated();
+
+    return (isLogged)
       ? children
       : <Navigate to='/login' />
   

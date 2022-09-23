@@ -6,10 +6,9 @@ import 'animate.css';
 
 export const HeroesApp = () => {
   return (
-   <>
       <AuthProvider>
           <AppRouter />
       </AuthProvider>     
-   </>
+
   )
 }

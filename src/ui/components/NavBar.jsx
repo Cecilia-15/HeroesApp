@@ -1,19 +1,22 @@
 import { useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../auth/context/AuthContext';
+import { startLogout } from '../../store/auth/thunks';
 
 // TODO: Primera Tarea: En el componente Navbar.jsx agregar la clase active utilizando el callback que ofrecen los NavLinks de react-router-dom en su atributo className.
 
 export const Navbar = () => {
 
     const navigate = useNavigate();
-
-    const { user, logout } = useContext(AuthContext )
+    const { displayName } = useSelector(state => state.auth)
+    const { logout } = useContext(AuthContext)
+    const dispatch = useDispatch()
 
     const isActive = ({isActive}) => `nav-item nav-link ${ isActive ? 'active' : ''}`
     
     const onLogout = () => {
-
+        dispatch(startLogout())
         logout();
 
         navigate('/login', {
@@ -47,7 +50,7 @@ export const Navbar = () => {
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                 <ul className="navbar-nav ml-auto">
                    <span className="user">
-                        { user?.username }
+                        { displayName }
                    </span>
                    <button 
                         className='btn nav-item nav-link'
